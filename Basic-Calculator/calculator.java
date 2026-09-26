@@ -3,6 +3,10 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("1 For add ");
+        System.out.println("2 For subtract ");
+        System.out.println("3 For multiply ");
+        System.out.println("4 For divide ");
 
         System.out.println("Enter your choice : ");
         int choice = sc.nextInt();
@@ -16,7 +20,7 @@ public class Calculator {
         int sum = a + b;
         int sub = a - b;
         int multi = a * b;
-        int division = a / b;
+        double division = (double) a / b;
 
         switch (choice) {
             case 1:
