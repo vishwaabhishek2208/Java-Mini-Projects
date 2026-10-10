@@ -3,47 +3,51 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("1 For add ");
-        System.out.println("2 For subtract ");
-        System.out.println("3 For multiply ");
-        System.out.println("4 For divide ");
 
-        System.out.println("Enter your choice : ");
-        int choice = sc.nextInt();
+        while (true) {
+            System.out.println("1 For add ");
+            System.out.println("2 For subtract ");
+            System.out.println("3 For multiply ");
+            System.out.println("4 For divide ");
+            System.out.println("5 For exit ");
 
-        System.out.println("Enter a number : ");
-        int a = sc.nextInt();
+            System.out.print("Enter your choice : ");
+            int choice = sc.nextInt();
 
-        System.out.println("Enter another number : ");
-        int b = sc.nextInt();
-
-        int sum = a + b;
-        int sub = a - b;
-        int multi = a * b;
-        double division = (double) a / b;
-
-        switch (choice) {
-            case 1:
-                System.out.println("The summation is : " + sum);
+            if (choice == 5) {
+                System.out.println("Bye!");
                 break;
+            }
 
-            case 2:
-                System.out.println("The subtraction is : " + sub);
-                break;
+            System.out.print("Enter a number : ");
+            int a = sc.nextInt();
 
-            case 3:
-                System.out.println("The multiplication is : " + multi);
-                break;
+            System.out.print("Enter another number : ");
+            int b = sc.nextInt();
 
-            case 4:
-                System.out.println("The division is : " + division);
-                break;
-
-            default:
-                System.out.println("Invalid choice");
-                break;
+            switch (choice) {
+                case 1:
+                    System.out.println("The summation is : " + (a + b));
+                    break;
+                case 2:
+                    System.out.println("The subtraction is : " + (a - b));
+                    break;
+                case 3:
+                    System.out.println("The multiplication is : " + (a * b));
+                    break;
+                case 4:
+                    if (b == 0) {
+                        System.out.println("Cannot divide by zero!");
+                    } else {
+                        System.out.println("The division is : " + ((double) a / b));
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
+            System.out.println();
         }
+
         sc.close();
     }
-
 }
